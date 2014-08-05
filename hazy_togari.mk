@@ -17,11 +17,11 @@
 TARGET_SCREEN_HEIGHT := 1920
 TARGET_SCREEN_WIDTH := 1080
 
-# Inherit Omni GSM telephony parts
-$(call inherit-product, vendor/omni/config/gsm.mk)
+# Inherit Hazy GSM telephony parts
+$(call inherit-product, vendor/twixkat/configs/gsm.mk)
 
-# Inherit some common Omni stuff
-$(call inherit-product, vendor/omni/config/common.mk)
+# Inherit from our Hazy product configuration
+$(call inherit-product, vendor/twixkat/configs/common.mk)
 
 # Inherit from the common Open Source product configuration
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
@@ -32,10 +32,13 @@ $(call inherit-product, device/sony/common/resources.mk)
 # Inherit more device specific configurations
 $(call inherit-product, device/sony/togari/togari.mk)
 
+# Inherit from our Hazy vendor product
+$(call inherit-product, vendor/twixkat/device-partial.mk)
+
 # Discard inherited values and use our own instead.
 PRODUCT_MODEL := C6833
 PRODUCT_BRAND := Sony
-PRODUCT_NAME := omni_togari
+PRODUCT_NAME := hazy_togari
 PRODUCT_DEVICE := togari
 PRODUCT_MANUFACTURER := Sony
 

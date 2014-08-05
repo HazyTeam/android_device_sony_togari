@@ -1,1 +1,1 @@
-add_lunch_combo omni_togari-userdebug
+add_lunch_combo hazy_togari-userdebug
